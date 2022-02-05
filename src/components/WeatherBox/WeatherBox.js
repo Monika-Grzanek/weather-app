@@ -20,10 +20,12 @@ const WeatherBox = () => {
       });
   }, []);
 
+  const [weatherData, setWeatherData] = useState('');
+
   return (
     <section>
       <PickCity action={handleCityChange} />
-      <WeatherSummary />
+      <WeatherSummary value={weatherData} onChange={e => setWeatherData(e.target.value)}/>
       <Loader />
     </section>
   )
